@@ -1,0 +1,140 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    color: #0056b3;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ★★ ここから追加/変更 ★★ */
+.left-panel {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* パネル間の隙間 */
+}
+
+#status-panel,
+#controls {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.resource-item {
+    display: flex;
+    justify-content: space-between; /* ラベルとボタンを両端に */
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+.resource-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.resource-item label {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.resource-value {
+    display: inline-block;
+    width: 40px; /* 数値の幅を固定 */
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0056b3;
+}
+.adjust-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    background-color: #e7f3ff;
+    border: 1px solid #b3d7ff;
+    border-radius: 50%; /* 丸いボタン */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.adjust-btn:hover {
+    background-color: #cce5ff;
+}
+/* ★★ ここまで追加/変更 ★★ */
+
+
+#controls button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#controls button:hover {
+    background-color: #0056b3;
+}
+
+.wood-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wood-control button {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.wood-control input[type="number"] {
+    width: 60px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#log-container {
+    flex: 2;
+    min-width: 300px;
+}
+
+#log-area {
+    background-color: #282c34; /* 暗いコンソール風 */
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    height: 600px; /* 高さを少し調整 */
+    overflow-y: scroll; /* ログが溢れたらスクロール */
+    white-space: pre-wrap; /* コンソールのように改行を保持 */
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.storm-warning {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.1em;
+}

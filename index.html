@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームシミュレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>ゲームシミュレーター</h1>
+
+    <div class="container">
+        
+        <div class="left-panel">
+
+            <div id="status-panel">
+                <h2>ステータス</h2>
+                <div class="resource-item">
+                    <label>食料 (Food)</label>
+                    <div>
+                        <button id="food-minus" class="adjust-btn">-</button>
+                        <span id="food-value" class="resource-value">0</span>
+                        <button id="food-plus" class="adjust-btn">+</button>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <label>水 (Water)</label>
+                    <div>
+                        <button id="water-minus" class="adjust-btn">-</button>
+                        <span id="water-value" class="resource-value">0</span>
+                        <button id="water-plus" class="adjust-btn">+</button>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <label>木材 (Wood)</label>
+                    <div>
+                        <button id="wood-res-minus" class="adjust-btn">-</button>
+                        <span id="wood-value" class="resource-value">0</span>
+                        <button id="wood-res-plus" class="adjust-btn">+</button>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <label>イカダ (Raft)</label>
+                    <div>
+                        <button id="raft-minus" class="adjust-btn">-</button>
+                        <span id="raft-value" class="resource-value">0</span>
+                        <button id="raft-plus" class="adjust-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <h2>アクション</h2>
+                <button id="fish-btn">食料獲得 (f)</button>
+                <button id="rain-btn">天気カード (r)</button>
+                <div class="wood-control">
+                    <button id="wood-btn">木材獲得 (w)</button>
+                    <input type="number" id="wood-input" value="3" min="1" max="5">
+                    <span>個 宣言</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="log-container">
+            <h2>ログ</h2>
+            <pre id="log-area"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
