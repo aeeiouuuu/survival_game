@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゲームシミュレーター</title>
+    <title>へルパゴス</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>ゲームシミュレーター</h1>
-
     <div class="container">
         
         <div class="left-panel">
+            <h1>へルパゴス</h1>
 
             <div id="status-panel">
                 <h2>ステータス</h2>
@@ -49,21 +48,47 @@
                     </div>
                 </div>
             </div>
-            <div id="controls">
-                <h2>アクション</h2>
-                <button id="fish-btn">食料獲得 (f)</button>
-                <button id="rain-btn">天気カード (r)</button>
-                <div class="wood-control">
-                    <button id="wood-btn">木材獲得 (w)</button>
-                    <input type="number" id="wood-input" value="3" min="1" max="5">
-                    <span>個 宣言</span>
+
+            <div id="action-panel">
+                <div class="game-component" id="bag-component">
+                    <h3>👜 運命の袋 (計6個)</h3>
+                    <p>白3(1🐟), 白2(2🐟), 黒1(3🐟)</p>
+                    <button id="fish-btn" class="action-btn">食料獲得 (f)</button>
+                    <div class="wood-control">
+                        <button id="wood-btn" class="action-btn">木材獲得 (w)</button>
+                        <input type="number" id="wood-input" value="1" min="1" max="5">
+                        <span>個 宣言</span>
+                    </div>
+                </div>
+                <div class="game-component" id="deck-component">
+                    <h3>🃏 天気デッキ (<span id="deck-count">12</span>/12)</h3>
+                    <p>山の上部6枚は「嵐」なし</p>
+                    <div id="deck-visual"></div>
+                    <button id="rain-btn" class="action-btn">天気カード (r)</button>
                 </div>
             </div>
         </div>
 
-        <div id="log-container">
-            <h2>ログ</h2>
-            <pre id="log-area"></pre>
+        <div class="right-panel">
+            
+            <div id="current-weather-panel">
+                <h2><span id="round-number">Round 0</span> : 現在の天気</h2>
+                <div id="current-weather-card-area">
+                    <p class="placeholder-text">天気カードを引いて<br>ラウンドを開始してください</p>
+                </div>
+            </div>
+
+            <div id="action-visualizer-panel">
+                <h2>アクション結果</h2>
+                <div id="animation-area">
+                    <p class="placeholder-text">食料獲得(f) や 木材獲得(w)<br>の演出がここに表示されます</p>
+                </div>
+            </div>
+
+            <div id="log-container">
+                <h2>詳細ログ</h2>
+                <pre id="log-area"></pre>
+            </div>
         </div>
     </div>
 
